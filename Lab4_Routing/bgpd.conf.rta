@@ -1,0 +1,21 @@
+!
+! Zebra configuration saved from vty
+!   2023/09/27 14:38:22
+!
+hostname bgpd
+password zebra
+log stdout
+!
+router bgp 65000
+ bgp router-id 192.168.10.2
+ network 172.16.1.0/24
+ network 172.16.2.0/24
+ network 172.16.40.0/24
+ neighbor 192.168.10.1 remote-as 65001
+!
+ address-family ipv6
+ exit-address-family
+ exit
+!
+line vty
+!
